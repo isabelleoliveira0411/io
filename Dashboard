@@ -1,0 +1,102 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
+import { CalendarDays, User, Briefcase, FileText, Clock, Gavel, DollarSign, CalendarCheck } from "lucide-react";
+
+export default function Dashboard() {
+  return (
+    <div className="p-6 space-y-6">
+      {/* Capa com ícones de navegação */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <Card className="cursor-pointer hover:shadow-lg">
+          <CardContent className="flex flex-col items-center justify-center p-4">
+            <User className="h-8 w-8 mb-2" />
+            <span>Clientes</span>
+          </CardContent>
+        </Card>
+        <Card className="cursor-pointer hover:shadow-lg">
+          <CardContent className="flex flex-col items-center justify-center p-4">
+            <Briefcase className="h-8 w-8 mb-2" />
+            <span>Leads</span>
+          </CardContent>
+        </Card>
+        <Card className="cursor-pointer hover:shadow-lg">
+          <CardContent className="flex flex-col items-center justify-center p-4">
+            <FileText className="h-8 w-8 mb-2" />
+            <span>Processos</span>
+          </CardContent>
+        </Card>
+        <Card className="cursor-pointer hover:shadow-lg">
+          <CardContent className="flex flex-col items-center justify-center p-4">
+            <Clock className="h-8 w-8 mb-2" />
+            <span>Prazos</span>
+          </CardContent>
+        </Card>
+        <Card className="cursor-pointer hover:shadow-lg">
+          <CardContent className="flex flex-col items-center justify-center p-4">
+            <Gavel className="h-8 w-8 mb-2" />
+            <span>Audiencias</span>
+          </CardContent>
+        </Card>
+        <Card className="cursor-pointer hover:shadow-lg">
+          <CardContent className="flex flex-col items-center justify-center p-4">
+            <CalendarDays className="h-8 w-8 mb-2" />
+            <span>Perícias</span>
+          </CardContent>
+        </Card>
+        <Card className="cursor-pointer hover:shadow-lg">
+          <CardContent className="flex flex-col items-center justify-center p-4">
+            <DollarSign className="h-8 w-8 mb-2" />
+            <span>Financeiro</span>
+          </CardContent>
+        </Card>
+        <Card className="cursor-pointer hover:shadow-lg">
+          <CardContent className="flex flex-col items-center justify-center p-4">
+            <CalendarCheck className="h-8 w-8 mb-2" />
+            <span>Agenda</span>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Abas de conteúdo interativo */}
+      <Tabs defaultValue="clientes" className="mt-6">
+        <TabsList className="grid grid-cols-4 md:grid-cols-8 gap-2">
+          <TabsTrigger value="clientes">Clientes</TabsTrigger>
+          <TabsTrigger value="leads">Leads</TabsTrigger>
+          <TabsTrigger value="processos">Processos</TabsTrigger>
+          <TabsTrigger value="prazos">Prazos</TabsTrigger>
+          <TabsTrigger value="audiencias">Audiências</TabsTrigger>
+          <TabsTrigger value="pericias">Perícias</TabsTrigger>
+          <TabsTrigger value="financeiro">Financeiro</TabsTrigger>
+          <TabsTrigger value="agenda">Agenda</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="clientes">
+          <div className="p-4 bg-white rounded-xl shadow">Preencha os dados dos clientes aqui.</div>
+        </TabsContent>
+        <TabsContent value="leads">
+          <div className="p-4 bg-white rounded-xl shadow">Gerencie os leads aqui.</div>
+        </TabsContent>
+        <TabsContent value="processos">
+          <div className="p-4 bg-white rounded-xl shadow">Detalhes dos processos judiciais.</div>
+        </TabsContent>
+        <TabsContent value="prazos">
+          <div className="p-4 bg-white rounded-xl shadow">Controle dos prazos processuais.</div>
+        </TabsContent>
+        <TabsContent value="audiencias">
+          <div className="p-4 bg-white rounded-xl shadow">Agendamento e histórico de audiências.</div>
+        </TabsContent>
+        <TabsContent value="pericias">
+          <div className="p-4 bg-white rounded-xl shadow">Informações sobre perícias.</div>
+        </TabsContent>
+        <TabsContent value="financeiro">
+          <div className="p-4 bg-white rounded-xl shadow">Gestão financeira e pagamentos.</div>
+        </TabsContent>
+        <TabsContent value="agenda">
+          <div className="p-4 bg-white rounded-xl shadow">Compromissos e calendário do escritório.</div>
+        </TabsContent>
+      </Tabs>
+    </div>
+  );
+} 
